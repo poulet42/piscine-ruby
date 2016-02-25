@@ -1,7 +1,10 @@
 #!/usr/bin/env ruby
 
 def great_births(persons= {})
-	
+	persons = persons.sort_by { |key, value| value[:year_of_birth] }
+	persons.each do |key, value|
+		puts "#{value[:name]} is a great person born in #{value[:year_of_birth]}."
+	end
 end
 
 women_in_science = {
